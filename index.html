@@ -5,12 +5,30 @@
 	<meta name="Keywords" content="wikipedia,wikibot,wiki,bot,reddit">
 	<meta name="Description" content="Site for the Reddit bot WikiBot">
 	<title>WikiBot</title>
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
 </head>
 
 <body>
-    <div style="margin:auto; width:50%; text-align:center">
-        <img src="art/wikibot_logo.png" alt="WikiBot Logo">
-        <p>Future site for WikiBot!</p>
+    
+    <div class="navbar">
+        <div style="margin-left:15px; padding-top:10px; font-size:25px; font-family:Arial;">
+            <a href="index.html">Home</a>
+            <a href="stats.html">Stats</a>
+            <a href="faq.html">FAQ</a>
+        </div>
     </div>
+    
+    <div class="main">
+        <img src="art/wikibot_logo.png" alt="WikiBot Logo" style="text-align:center;">
+        <div class="query">
+            <form autocomplete="on">
+                <input type="text" name="query" size="60" autofocus>
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    </div>
+    
 </body>
 </html>
