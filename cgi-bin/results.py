@@ -1,13 +1,17 @@
 #!/usr/bin/python
 
 import cgi, cgitb
+import sys
 from getWiki import Wiki 
 
 # Create instance of FieldStorage 
 form = cgi.FieldStorage() 
 
 # Get data from fields
-query = form.getvalue('query')
+if sys.argv[0] != None:
+    query = sys.argv[0]
+else:
+    query = form.getvalue('query')
 
 #get wiki page
 wiki = Wiki()
