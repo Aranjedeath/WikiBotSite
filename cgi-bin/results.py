@@ -16,8 +16,7 @@ print """
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="Keywords" content="wikipedia,wikibot,wiki,bot,reddit">
 	<meta name="Description" content="Site for the Reddit bot WikiBot">
-    
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
 """
 
 
@@ -26,11 +25,11 @@ print "</head>"
 print "<body>"
 
 print """
-<div class="navbar">
+    <div class="navbar">
         <div style="margin-left:15px; padding-top:10px; font-size:25px; font-family:Arial;">
-            <a href="index.html">Home</a>
-            <a href="stats.html">Stats</a>
-            <a href="faq.html">FAQ</a>
+            <a href="../index.html">Home</a>
+            <a href="../stats.html">Stats</a>
+            <a href="../faq.html">FAQ</a>
         </div>
     </div> 
 """
