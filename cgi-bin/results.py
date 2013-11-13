@@ -33,6 +33,6 @@ print """
         </div>
     </div> 
 """
-print "<h2>This is your query: </h2>" % query
+print "<h2>This is your query: %s</h2>" % query
 print "</body>"
 print "</html>"
