@@ -32,7 +32,20 @@ print """
             <a href="../faq.html">FAQ</a>
         </div>
     </div> 
+    
+    <div>
+        <form action="results.py" method="post" autocomplete="on" style="margin-left:20px; margin-bottom:10px;">
+            <img src="../art/wikibot_logo.png" alt="WikiBot Logo" height="79" width="136"> <input type="text" name="query" size="60" autofocus>
+            <input type="submit" value="Search">
+        </form>
+        <hr>
+    </div>
 """
-print "<h2>This is your query: %s</h2>" % query
+print """
+    <div style="margin-left:40px">
+        %s
+    <div>
+""" % query
+
 print "</body>"
 print "</html>"
