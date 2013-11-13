@@ -9,8 +9,9 @@ form = cgi.FieldStorage()
 # Get data from fields
 query = form.getvalue('query')
 
+#get wiki page
 wiki = Wiki()
-results, cat = wiki.searchwiki(query,"en")
+results, categories = wiki.searchwiki(query,"en")
 
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
