@@ -41,3 +41,8 @@ a:visited{
     margin-top:50px;
     text-align:center;
 }
+
+li{
+    font-family:Arial;
+    font-size:25px;
+}
