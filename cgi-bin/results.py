@@ -1,13 +1,16 @@
 #!/usr/bin/python
 
-# Import modules for CGI handling 
-import cgi, cgitb 
+import cgi, cgitb
+from getWiki import Wiki 
 
 # Create instance of FieldStorage 
 form = cgi.FieldStorage() 
 
 # Get data from fields
 query = form.getvalue('query')
+
+wiki = Wiki()
+results, cat = wiki.searchwiki(query,"en")
 
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
@@ -18,7 +21,6 @@ print """
 	<meta name="Description" content="Site for the Reddit bot WikiBot">
     <link rel="stylesheet" type="text/css" href="../style.css">
 """
-
 
 print "<title>WikiBot Results</title>"
 print "</head>"
@@ -45,7 +47,7 @@ print """
     <div style="margin-left:40px">
         %s
     <div>
-""" % query
+""" % results
 
 print "</body>"
 print "</html>"
