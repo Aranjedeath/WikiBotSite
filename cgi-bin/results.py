@@ -16,7 +16,7 @@ else:
 
 #get wiki page
 wiki = Wiki()
-results, categories = wiki.searchwiki(query,"en")
+results, categories = wiki.searchwiki(query,"en",True)
 
 print "Content-type:text/html\r\n\r\n"
 print "<html>"
@@ -51,7 +51,7 @@ print """
 """
 print """
     <div style="margin-left:40px; margin-right:5%%; font-size:18px; font-family:Hoefler Text, 'Times New Roman';">
-        %s
+        <p>%s<p>
     <div>
 """ % results
 
