@@ -50,9 +50,9 @@ print """
 """
 print """
     <div style="margin-left:40px">
-        %s
+        test
     <div>
-""" % results
+"""
 
 print "</body>"
 print "</html>"
