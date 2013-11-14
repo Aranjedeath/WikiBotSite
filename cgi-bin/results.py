@@ -8,8 +8,8 @@ from getWiki import Wiki
 form = cgi.FieldStorage() 
 
 # Get data from fields
-if sys.argv[0] != None:
-    query = sys.argv[0]
+if len(sys.argv) > 1:
+    query = sys.argv[1]
 else:
     query = form.getvalue('query')
 
