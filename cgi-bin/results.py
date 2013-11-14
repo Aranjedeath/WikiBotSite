@@ -50,7 +50,7 @@ print """
     </div>
 """
 print """
-    <div style="margin-left:40px; margin-right:5%; font-size:18px; font-family:Hoefler Text, 'Times New Roman';">
+    <div style="margin-left:40px; margin-right:5%%; font-size:18px; font-family:Hoefler Text, 'Times New Roman';">
         %s
     <div>
 """ % results
