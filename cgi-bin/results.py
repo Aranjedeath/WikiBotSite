@@ -1,11 +1,12 @@
 #!/usr/bin/python
 
-import cgi, cgitb
+import cgi
+import cgitb; cgitb.enable()
 import sys
-from getWiki import Wiki 
+from getWiki import Wiki
 
 # Create instance of FieldStorage 
-form = cgi.FieldStorage() 
+form = cgi.FieldStorage()
 
 # Get data from fields
 if len(sys.argv) > 1:
