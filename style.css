@@ -42,7 +42,7 @@ a.nav:visited{
     text-align:center;
 }
 
-li{
+li.faq{
     font-family:Arial;
     font-size:25px;
 }
