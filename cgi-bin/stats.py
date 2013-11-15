@@ -32,7 +32,13 @@ print """
     </div>
     
     <div style="font-family:Arial; font-size:25px; text-align:center">
-        <div style="width:25%; margin-left:20%; float:left; padding:20px;">
+    
+        <div>
+            <b>Number of WikiBot calls</b>
+            <p style="margin-top:5px">X</p>
+        </div>
+        
+        <div style="width:30%; margin-left:15%; float:left; padding:20px;">
             <b>10 Most Recent Queries</b>
             <ol>
                 <li>Test</li>
@@ -48,7 +54,7 @@ print """
             </ol>
         </div>
             
-        <div style="width:25%; margin-right:20%; float:right; padding:20px;">
+        <div style="width:30%; margin-right:15%; float:right; padding:20px;">
             <b>Top 10 SubReddits</b>
             <ol>
                 <li>Test</li>
@@ -63,6 +69,39 @@ print """
                 <li>Test</li>
             </ol>
         </div>
+        
+        <div style="width:30%; margin-left:15%; float:left; padding:20px;">
+            <b>Some stats</b>
+            <ol>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+            </ol>
+        </div>
+        
+        <div style="width:30%; margin-right:15%; float:right; padding:20px;">
+            <b>Some other stats</b>
+            <ol>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+            </ol>
+        </div>
+        
     </div>
     
 </body>
