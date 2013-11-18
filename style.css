@@ -57,3 +57,7 @@ ul.faq{
 .lang{
     font-size:18px;
 }
+
+ol.stat{
+    text-align:left;
+}

@@ -5,3 +5,4 @@ art/Thumbs.db
 cgi-bin/test.html
 instance_keys/WikiBotAWS2.pem
 instance_keys/WikiBotAWS2.ppk
+cgi-bin/stats_test.html

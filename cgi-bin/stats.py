@@ -58,7 +58,7 @@ print """
         
         <div style="width:30%; margin-left:15%; float:left; padding:20px;">
             <b>10 Most Recent Queries</b>
-            <ol>
+            <ol class="stat">
                 <li>Test</li>
                 <li>Test</li>
                 <li>Test</li>
@@ -74,7 +74,7 @@ print """
             
         <div style="width:30%; margin-right:15%; float:right; padding:20px;">
             <b>Top 10 SubReddits</b>
-            <ol>
+            <ol class="stat">
                 <li>Test</li>
                 <li>Test</li>
                 <li>Test</li>
@@ -90,7 +90,7 @@ print """
         
         <div style="width:30%; margin-left:15%; float:left; padding:20px;">
             <b>Top 10 Wikipedia Categories</b>
-            <ol>
+            <ol class="stat">
 """
 
 for x in topcatlist[0:10]:
@@ -102,7 +102,7 @@ print"""
         
         <div style="width:30%; margin-right:15%; float:right; padding:20px;">
             <b>Some other stats</b>
-            <ol>
+            <ol class="stat">
                 <li>Test</li>
                 <li>Test</li>
                 <li>Test</li>
