@@ -3,6 +3,24 @@
 import cgi
 import cgitb; cgitb.enable()
 import sys
+import json
+import operator
+
+#open json containg stats
+with open('../../WikiBot/stats') as statistics:
+        for line in statistics:
+            stats = json.loads(line.strip())
+
+#get top 10 categories
+topcats = {}
+for sub in stats['catagories']:
+    for cat in stats['catagories'][sub]:
+        try:
+            topcats[cat] += stats['catagories'][sub][cat]
+        except KeyError:
+            topcats[cat] = stats['catagories'][sub][cat]
+        
+topcatlist = sorted(topcats.iteritems(), key=operator.itemgetter(1), reverse=True)
 
 print """
 <!DOCTYPE html>
@@ -71,18 +89,14 @@ print """
         </div>
         
         <div style="width:30%; margin-left:15%; float:left; padding:20px;">
-            <b>Some stats</b>
+            <b>Top 10 Wikipedia Categories</b>
             <ol>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
+"""
+
+for x in topcatlist:
+    print "<li>" + x[0] + ": " + str(x[1]) + "</li>"
+
+print"""
             </ol>
         </div>
         
