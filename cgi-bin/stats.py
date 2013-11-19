@@ -79,7 +79,7 @@ subs = []
 for sub in categories['subreddits']:
     subs.append((sub,categories['subreddits'][sub]))
 
-for sub in sorted(subs, key=lambda tup: tup[1], reverse=True)
+for sub in sorted(subs, key=lambda tup: tup[1], reverse=True):
     print "<li>" + sub[0] + ": " + str(sub[1]) + "</li>"
 
 print """
