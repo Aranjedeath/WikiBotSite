@@ -77,7 +77,7 @@ print """
 
 subs = []
 for sub in stats['subreddits']:
-    subs.append((sub,stats['subreddits']['count'][sub]))
+    subs.append((sub,stats['subreddits'][sub]['count']))
 
 for sub in sorted(subs, key=lambda tup: tup[1], reverse=True):
     print "<li>" + sub[0] + ": " + str(sub[1]) + "</li>"
