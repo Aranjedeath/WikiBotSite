@@ -88,7 +88,7 @@ print """
             </ol>
         </div>
         
-        <div style="width:30%; margin-left:15%; height:350px; float:left; padding:20px;">
+        <div style="width:30%; margin-left:15%; height:400px; float:left; padding:20px;">
             <b>Top 10 Wikipedia Categories</b>
             <hr>
             <ol class="stat">
@@ -101,7 +101,7 @@ print """
             </ol>
         </div>
         
-        <div style="width:30%; margin-right:15%; height:350px; float:right; padding:20px;">
+        <div style="width:30%; margin-right:15%; height:400px; float:right; padding:20px;">
             <b>Some other stats (might delete)</b>
             <hr>
             <ol class="stat">
