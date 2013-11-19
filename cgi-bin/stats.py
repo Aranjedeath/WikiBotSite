@@ -11,7 +11,7 @@ with open('../../WikiBot/stats') as statistics:
         for line in statistics:
             stats = json.loads(line.strip())
 
-#get top 10 categories
+#get categories
 topcats = {}
 for sub in stats['categories']:
     for cat in stats['categories'][sub]:
@@ -52,67 +52,60 @@ print """
     <div style="font-family:Arial; font-size:25px; text-align:center">
     
         <div>
-            <b>Number of WikiBot calls</b>
-            <p style="margin-top:5px">X</p>
+            <b>Number of WikiBot calls:</b>
+            <p style="margin-top:5px">%s</p>
         </div>
-        
+""" % str(stats['count'])
+
+print """      
         <div style="width:30%; margin-left:15%; float:left; padding:20px;">
             <b>10 Most Recent Queries</b>
             <ol class="stat">
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
+"""
+
+for query in stats['quries']:
+    print "<li>" + query + "</li>"
+
+print """               
             </ol>
         </div>
             
         <div style="width:30%; margin-right:15%; float:right; padding:20px;">
             <b>Top 10 SubReddits</b>
             <ol class="stat">
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
+""" 
+
+subs = []
+for sub in categories['subreddits']:
+    subs.append((sub,categories['subreddits'][sub]))
+
+for sub in sorted(subs, key=lambda tup: tup[1], reverse=True)
+    print "<li>" + sub[0] + ": " + str(sub[1]) + "</li>"
+
+print """
             </ol>
         </div>
         
         <div style="width:30%; margin-left:15%; float:left; padding:20px;">
             <b>Top 10 Wikipedia Categories</b>
             <ol class="stat">
-"""
+""" 
 
 for x in topcatlist[0:10]:
     print "<li>" + x[0] + ": " + str(x[1]) + "</li>"
 
-print"""
+print """
             </ol>
         </div>
         
         <div style="width:30%; margin-right:15%; float:right; padding:20px;">
-            <b>Some other stats</b>
+            <b>Some other stats (might delete)</b>
             <ol class="stat">
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
+"""
+
+
+
+print """               
             </ol>
         </div>
         
