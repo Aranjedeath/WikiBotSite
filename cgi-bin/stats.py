@@ -13,12 +13,12 @@ with open('../../WikiBot/stats') as statistics:
 
 #get top 10 categories
 topcats = {}
-for sub in stats['catagories']:
-    for cat in stats['catagories'][sub]:
+for sub in stats['categories']:
+    for cat in stats['categories'][sub]:
         try:
-            topcats[cat] += stats['catagories'][sub][cat]
+            topcats[cat] += stats['categories'][sub][cat]
         except KeyError:
-            topcats[cat] = stats['catagories'][sub][cat]
+            topcats[cat] = stats['categories'][sub][cat]
         
 topcatlist = sorted(topcats.iteritems(), key=operator.itemgetter(1), reverse=True)
 
