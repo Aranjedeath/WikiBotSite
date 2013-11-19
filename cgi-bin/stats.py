@@ -63,7 +63,7 @@ print """
             <ol class="stat">
 """
 
-for query in stats['quries']:
+for query in stats['queries']:
     print "<li>" + query + "</li>"
 
 print """               
