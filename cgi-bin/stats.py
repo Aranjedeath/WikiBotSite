@@ -58,8 +58,9 @@ print """
 """ % str(stats['count'])
 
 print """      
-        <div style="width:30%; margin-left:15%; float:left; padding:20px;">
+        <div style="width:30%; margin-left:15%; height:350px; float:left; padding:20px;">
             <b>10 Most Recent Queries</b>
+            <hr>
             <ol class="stat">
 """
 
@@ -70,8 +71,9 @@ print """
             </ol>
         </div>
             
-        <div style="width:30%; margin-right:15%; float:right; padding:20px;">
+        <div style="width:30%; margin-right:15%; height:350px; float:right; padding:20px;">
             <b>Top 10 SubReddits</b>
+            <hr>
             <ol class="stat">
 """ 
 
@@ -86,8 +88,9 @@ print """
             </ol>
         </div>
         
-        <div style="width:30%; margin-left:15%; float:left; padding:20px;">
+        <div style="width:30%; margin-left:15%; height:350px; float:left; padding:20px;">
             <b>Top 10 Wikipedia Categories</b>
+            <hr>
             <ol class="stat">
 """ 
 
@@ -98,8 +101,9 @@ print """
             </ol>
         </div>
         
-        <div style="width:30%; margin-right:15%; float:right; padding:20px;">
+        <div style="width:30%; margin-right:15%; height:350px; float:right; padding:20px;">
             <b>Some other stats (might delete)</b>
+            <hr>
             <ol class="stat">
 """
 
