@@ -37,7 +37,7 @@ def subRec(articleCats):
     
     #get top three similarites
     results = []
-    for sub in sorted(similarity.items(), key=lambda x: x[1], reverse = True)[:3]
+    for sub in sorted(similarity.items(), key=lambda x: x[1], reverse = True)[:3]:
         for cat in categories[sub[0]]:
             results.append((sub,sorted(categories[sub[0][cat].items(), key=lambda x: x[1], reverse = True)[:1]))
             
