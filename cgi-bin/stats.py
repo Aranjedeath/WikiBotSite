@@ -82,7 +82,7 @@ for sub in stats['subreddits']:
     subs.append((sub,stats['subreddits'][sub]['count']))
 
 for sub in sorted(subs, key=lambda tup: tup[1], reverse=True)[:25]:
-    print '<li><a href="http://www.reddit.com/r/"' + sub[0] + '">' + sub[0] + "</a>" + ": " + str(sub[1]) + "</li>"
+    print '<li><a href="http://www.reddit.com/r/' + sub[0] + '">' + sub[0] + "</a>" + ": " + str(sub[1]) + "</li>"
 
 print """
             </ol>
