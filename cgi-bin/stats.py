@@ -58,7 +58,7 @@ print """
 """ % str(stats['count'])
 
 print """      
-        <div style="width:30%; margin-left:15%; height:350px; float:left; padding:20px;">
+        <div style="width:30%; margin-left:15%; height:450px; float:left; padding:20px;">
             <b>10 Most Recent Queries</b>
             <hr>
             <ol class="stat">
@@ -71,7 +71,7 @@ print """
             </ol>
         </div>
             
-        <div style="width:30%; margin-right:15%; height:350px; float:right; padding:20px;">
+        <div style="width:30%; margin-right:15%; height:450px; float:right; padding:20px;">
             <b>Top 10 SubReddits</b>
             <hr>
             <ol class="stat">
@@ -81,7 +81,7 @@ subs = []
 for sub in stats['subreddits']:
     subs.append((sub,stats['subreddits'][sub]['count']))
 
-for sub in sorted(subs, key=lambda tup: tup[1], reverse=True):
+for sub in sorted(subs, key=lambda tup: tup[1], reverse=True)[:25]:
     print "<li>" + sub[0] + ": " + str(sub[1]) + "</li>"
 
 print """
@@ -100,16 +100,7 @@ for x in topcatlist[0:10]:
 print """
             </ol>
         </div>
-        
-        <div style="width:30%; margin-right:15%; height:400px; float:right; padding:20px;">
-            <b>Some other stats (might delete)</b>
-            <hr>
-            <ol class="stat">
-"""
-
-
-
-print """               
+                   
             </ol>
         </div>
         
