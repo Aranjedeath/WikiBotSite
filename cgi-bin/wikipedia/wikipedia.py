@@ -144,7 +144,7 @@ def summary(title, sentences=0, chars=0, auto_suggest=True, redirect=True):
     return summary
 
 
-def page(title, auto_suggest=True, redirect=True, preload=False):
+def page(title, auto_suggest=True, redirect=True, preload=False, extraLevel = False):
     '''
     Get a WikipediaPage object for the page with title `title`.
 
@@ -163,7 +163,7 @@ def page(title, auto_suggest=True, redirect=True, preload=False):
             # if there is no suggestion or search results, the page doesn't exist
             raise PageError(title)
 
-    return WikipediaPage(title, redirect=redirect, preload=preload)
+    return WikipediaPage(title, redirect=redirect, preload=preload, extraLevel=extraLevel)
 
 
 class WikipediaPage(object):
@@ -172,9 +172,10 @@ class WikipediaPage(object):
     Uses property methods to filter data from the raw HTML.
     '''
 
-    def __init__(self, title, redirect=True, preload=False, original_title=''):
+    def __init__(self, title, redirect=True, preload=False, original_title='', extraLevel=False):
         self.title = title
         self.original_title = original_title or title
+        self.extraLevel = extraLevel
 
         self.load(redirect=redirect, preload=preload)
 
@@ -443,7 +444,32 @@ class WikipediaPage(object):
             request = _wiki_request(**query_params)
             self._categories = []
             for category in request['query']['pages'][self.pageid]['categories']:
-                self._categories.append(category['title'][9:])
+                cat = category['title'][9:]
+                cat = cat.replace(" ","_")
+                self._categories.append(cat)
+            
+            if self.extraLevel:
+                extracats = []
+                ignore = ['Categories_for_deletion','Wikipedia_article_lists']
+                for x in self._categories:
+                    query_params = {
+                    'prop':'categories',
+                    'cllimit':'max',
+                    'clshow':'!hidden',
+                    'titles': "Category:" + x,
+                    }
+                    xrequest = _wiki_request(**query_params)
+                    pageid = list(xrequest['query']['pages'].keys())[0]
+                    
+                    #print request['query']['pages'][pageid]['categories']
+                    
+                    for xcategory in xrequest['query']['pages'][pageid]['categories']:
+                        xcat = xcategory['title'][9:]
+                        xcat = xcat.replace(" ","_")
+                        if xcat not in self._categories and xcat not in extracats and xcat not in ignore:
+                            extracats.append(xcat)
+                        
+                self._categories = self._categories + extracats
                 
         return self._categories
 

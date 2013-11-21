@@ -1,6 +1,6 @@
-#import wikipedia
 import requests
 import wikipedia
+import subRec as subRec
 
 class Wiki(object):
 
@@ -26,7 +26,7 @@ class Wiki(object):
             pass
 
         try:
-            results = wikipedia.page(term)
+            results = wikipedia.page(term, extraLevel = True)
             title = results.title
             summary = (results.summary[:9000] + '...') if len(results.summary) > 9000 else results.summary
             if site:
@@ -36,11 +36,13 @@ class Wiki(object):
             
             response = self.recommender(title, response)
             
+            categories = results.categories
+            
+            response = self.subRecommender(response, categories)
+            
             response = self.wikifooter(response)
             
-            if not site:
-                categories = results.categories
-            
+
         except wikipedia.exceptions.DisambiguationError as e:
             response=''
             if len(e.options) >= 6:
@@ -101,6 +103,22 @@ class Wiki(object):
                 response = response + "</ul>"
             
         return response
+        
+    def subRecommender(self, response, categories):
+        subs = subRec.subRec(categories)
+        
+        if len(subs) > 0:
+            if self.site:
+                response = response + "<p>Based on what kinds of articles subreddits search for with WikiBot, here are related subreddits:</p></ul>"
+                for sub in subs:
+                    response = response + "<li><a href=\"www.reddit.com/r/" + sub[0] + "\">/r/" + sub[0] + "</a></li>"
+                response = response + "</ul>"
+            else:
+                response = response + "\n\nBased on what kinds of articles subreddits search for with WikiBot, here are related subreddits:  \n"
+                for sub in subs:
+                    response = response + "/r/" + sub[0]
+                    
+        return response
     
     def formaturl(self, url):
         url = url.replace("(","\(")
@@ -116,7 +134,6 @@ class Wiki(object):
         
 if __name__ == "__main__":
     search = Wiki()
-    output =  search.searchwiki("Texas A&M", "en", False)
+    output =  search.searchwiki("Texas A&M", "en", True)
     print output[0]
-    print output[1]
-                
+              
