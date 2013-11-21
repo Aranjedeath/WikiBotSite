@@ -3,7 +3,7 @@ import math
 
 def subRec(articleCats):
     #get stats file for categories
-    with open('stats') as statsFile:
+    with open('../../WikiBot/stats') as statsFile:
             for line in statsFile:
                 stats = json.loads(line.strip())
               
