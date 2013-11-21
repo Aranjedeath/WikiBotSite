@@ -95,7 +95,7 @@ print """
 """ 
 
 for x in topcatlist[0:10]:
-    print "<li>" + x[0] + ": " + str(x[1]) + "</li>"
+    print "<li>" + x[0].replace("_"," ") + ": " + str(x[1]) + "</li>"
 
 print """
             </ol>

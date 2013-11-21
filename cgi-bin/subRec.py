@@ -3,7 +3,7 @@ import math
 
 def subRec(articleCats):
     #get stats file for categories
-    with open('../../WikiBot/stats') as statsFile:
+    with open('stats') as statsFile:
             for line in statsFile:
                 stats = json.loads(line.strip())
               
@@ -36,5 +36,8 @@ def subRec(articleCats):
         similarity[sub] = sum / (len(articleCats) * magSum)
     
     #get top three similarites
-    return sorted(similarity.items(), key=lambda x: x[1], reverse = True)[:3]
-       
+    results = []
+    for sub in sorted(similarity.items(), key=lambda x: x[1], reverse = True)[:3]
+        for cat in categories[sub[0]]:
+            results.append((sub,sorted(categories[sub[0][cat].items(), key=lambda x: x[1], reverse = True)[:1]))
+            
