@@ -65,7 +65,7 @@ print """
             <ol class="stat">
 """
 f = ProfanitiesFilter(replacements = "*")
-f.insidewords = True
+f.inside_words = True
 f.complete = False
 
 for query in stats['queries']:
