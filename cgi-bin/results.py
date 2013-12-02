@@ -18,6 +18,7 @@ else:
     lang = form.getvalue('language')
 
 #get wiki page
+
 wiki = Wiki()
 results, categories = wiki.searchwiki(query,lang,True)
 
@@ -71,7 +72,7 @@ langdic = {
                 'Simple'    : 'simple'
             }
 
-print "<!DOCTYPE html>"
+print "Content-type:text/html\r\n\r\n"
 print "<html>"
 print "<head>"
 print """
