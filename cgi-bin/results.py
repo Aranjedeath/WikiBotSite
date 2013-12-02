@@ -24,9 +24,10 @@ if len(sys.argv) > 1:
     query = sys.argv[1]
     lang = sys.argv[2]
 else:
+    lang = form.getvalue('language')
     if "query" in form:
         query = form.getvalue('query').decode('utf-8')
-        lang = form.getvalue('language')
+        
         wiki = Wiki()
         results, categories = wiki.searchwiki(query,lang,True)
     else:
