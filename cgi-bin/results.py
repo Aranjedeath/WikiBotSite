@@ -14,7 +14,7 @@ if len(sys.argv) > 1:
     query = sys.argv[1]
     lang = sys.argv[2]
 else:
-    query = unidecode(form.getvalue('query'))
+    query = unidecode(form['query'].value)
     lang = form.getvalue('language')
 
 #get wiki page
