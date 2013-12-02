@@ -3,6 +3,7 @@
 import cgi
 import cgitb; cgitb.enable()
 import sys
+from unidecode import unidecode
 from getWiki import Wiki
 
 # Create instance of FieldStorage 
@@ -13,7 +14,7 @@ if len(sys.argv) > 1:
     query = sys.argv[1]
     lang = sys.argv[2]
 else:
-    query = form.getvalue('query')
+    query = unidecode(form.getvalue('query'))
     lang = form.getvalue('language')
 
 #get wiki page
