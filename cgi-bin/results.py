@@ -14,7 +14,7 @@ if len(sys.argv) > 1:
     query = sys.argv[1]
     lang = sys.argv[2]
 else:
-    query = unidecode(form.getvalue('query'))
+    query = form.getvalue('query')
     lang = form.getvalue('language')
 
 #get wiki page
@@ -75,7 +75,7 @@ print "<!DOCTYPE html>"
 print "<html>"
 print "<head>"
 print """
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="Keywords" content="wikipedia,wikibot,wiki,bot,reddit">
 	<meta name="Description" content="Site for the Reddit bot WikiBot">
     <link rel="stylesheet" type="text/css" href="../style.css">
