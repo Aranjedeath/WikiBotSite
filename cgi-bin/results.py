@@ -3,6 +3,8 @@
 import cgi
 import cgitb; cgitb.enable()
 import sys
+sys.setdefaultencoding("utf-8")
+import site
 from unidecode import unidecode
 from getWiki import Wiki
 
