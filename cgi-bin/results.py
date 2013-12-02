@@ -6,6 +6,16 @@ import sys
 from unidecode import unidecode
 from getWiki import Wiki
 
+print "Content-type:text/html\r\n\r\n"
+print "<html>"
+print "<head>"
+print """
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta name="Keywords" content="wikipedia,wikibot,wiki,bot,reddit">
+	<meta name="Description" content="Site for the Reddit bot WikiBot">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+"""
+
 # Create instance of FieldStorage 
 form = cgi.FieldStorage()
 
@@ -71,16 +81,6 @@ langdic = {
                 'Nynorsk'   : 'nn',
                 'Simple'    : 'simple'
             }
-
-print "Content-type:text/html\r\n\r\n"
-print "<html>"
-print "<head>"
-print """
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="Keywords" content="wikipedia,wikibot,wiki,bot,reddit">
-	<meta name="Description" content="Site for the Reddit bot WikiBot">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-"""
             
 print "<title>WikiBot Results</title>"
 print "</head>"
