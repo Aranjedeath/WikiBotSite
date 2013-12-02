@@ -5,6 +5,7 @@ import cgitb; cgitb.enable()
 import sys
 import json
 import operator
+from filter import ProfanitiesFilter
 
 #open json containg stats
 with open('../../WikiBot/stats') as statistics:
@@ -63,9 +64,12 @@ print """
             <hr>
             <ol class="stat">
 """
+f = ProfanitiesFilter(replacements = "*")
+f.insidewords = True
+f.complete = False
 
 for query in stats['queries']:
-    print "<li>" + query + "</li>"
+    print "<li>" + f.clean(query) + "</li>"
 
 print """               
             </ol>
