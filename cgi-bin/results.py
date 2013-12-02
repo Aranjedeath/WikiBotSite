@@ -24,13 +24,13 @@ if len(sys.argv) > 1:
     query = sys.argv[1]
     lang = sys.argv[2]
 else:
-    query = form.getvalue('query').decode('utf-8')
-    lang = form.getvalue('language')
-
-#get wiki page
-
-wiki = Wiki()
-results, categories = wiki.searchwiki(query,lang,True)
+    if "query" in form:
+        query = form.getvalue('query').decode('utf-8')
+        lang = form.getvalue('language')
+        wiki = Wiki()
+        results, categories = wiki.searchwiki(query,lang,True)
+    else:
+        results = "You did not input a query"
 
 langdic = {
                 'English'   : 'en',
